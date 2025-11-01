@@ -239,10 +239,27 @@
   .mat-mdc-list-item {
     padding: 16px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    min-height: 64px;
+    min-height: 72px;
+    line-height: 1.4;
 
     &:last-child {
       border-bottom: none;
+    }
+
+    .mdc-list-item__content {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .mat-mdc-list-item-title {
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .mat-mdc-list-item-line {
+      line-height: 1.2;
+      margin-top: 2px;
     }
   }
 
