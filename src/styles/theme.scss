@@ -1,58 +1,122 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-// Define palettes
-$primary: mat.m2-define-palette(mat.$m2-indigo-palette);
-$accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
-$warn: mat.m2-define-palette(mat.$m2-red-palette);
+// Custom font family
+$font-family: 'Titillium Web', 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 
-// Light theme
-$light-theme: mat.m2-define-light-theme(
-  (
-    color: (
-      primary: $primary,
-      accent: $accent,
-      warn: $warn,
-    ),
-  )
-);
+// Define M3 themes
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (scale: 0),
+));
 
-// Dark theme
-$dark-theme: mat.m2-define-dark-theme(
-  (
-    color: (
-      primary: $primary,
-      accent: $accent,
-      warn: $warn,
-    ),
-  )
-);
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (scale: 0),
+));
 
-// Apply light theme by default
+// Apply themes
 @include mat.all-component-themes($light-theme);
 
-// Dark theme styles
 .dark {
   @include mat.all-component-themes($dark-theme);
-
-  // Custom dark theme variables
-  --mat-text-primary: #ffffff;
-  --mat-text-secondary: rgba(255, 255, 255, 0.7);
-  --mat-surface: #121212;
-  --mat-surface-variant: #1e1e1e;
-  --mat-divider-color: rgba(255, 255, 255, 0.12);
-  --mat-primary-rgb: 121, 134, 203;
-
-  background-color: var(--mat-surface);
-  color: var(--mat-text-primary);
 }
 
-// Light theme variables
+// Global overrides
+html,
+body {
+  font-family: $font-family;
+}
+
+// Essential M3 system tokens that aren't auto-generated
 :root {
-  --mat-text-primary: rgba(0, 0, 0, 0.87);
-  --mat-text-secondary: rgba(0, 0, 0, 0.6);
-  --mat-surface: #ffffff;
-  --mat-surface-variant: #f5f5f5;
-  --mat-divider-color: rgba(0, 0, 0, 0.12);
-  --mat-primary-rgb: 63, 81, 181;
+  --mat-sys-primary: #0078d4;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-surface: #ffffff;
+  --mat-sys-on-surface: #1c1b1f;
+  --mat-sys-surface-container: #fafafa;
+  --mat-sys-surface-container-high: #f5f5f5;
+  --mat-sys-surface-container-low: #fefefe;
+  --mat-sys-outline: #79747e;
+  --mat-sys-error: #ba1a1a;
+  --mat-sys-on-error: #ffffff;
+}
+
+.dark {
+  --mat-sys-primary: #8ecdf8;
+  --mat-sys-on-primary: #003450;
+  --mat-sys-surface: #121212;
+  --mat-sys-on-surface: #e6e0e9;
+  --mat-sys-surface-container: #2a2a2e;
+  --mat-sys-surface-container-high: #35353a;
+  --mat-sys-surface-container-low: #1f1f22;
+  --mat-sys-outline: #938f99;
+  --mat-sys-error: #ffb4ab;
+  --mat-sys-on-error: #690005;
+}
+
+// Override all Material component fonts
+html {
+  // Base font family variable
+  --mat-app-font-family: #{$font-family};
+
+  // Form fields
+  --mat-form-field-container-text-font: #{$font-family};
+  --mat-form-field-outlined-label-text-font: #{$font-family};
+  --mat-form-field-filled-label-text-font: #{$font-family};
+  
+  // Buttons
+  --mat-protected-button-label-text-font: #{$font-family};
+  
+  // Toolbar
+  --mat-toolbar-title-text-font: #{$font-family};
+  
+  // Tables
+  --mat-table-header-headline-font: #{$font-family};
+  --mat-table-row-item-label-text-font: #{$font-family};
+  
+  // Cards
+  --mat-card-title-text-font: #{$font-family};
+  --mat-card-subtitle-text-font: #{$font-family};
+  
+  // Dialogs
+  --mat-dialog-headline-font: #{$font-family};
+  --mat-dialog-supporting-text-font: #{$font-family};
+  
+  // Tabs
+  --mat-tab-header-label-text-font: #{$font-family};
+  
+  // Menus
+  --mat-menu-item-label-text-font: #{$font-family};
+  
+  // Steppers
+  --mat-stepper-header-label-text-font: #{$font-family};
+  
+  // Lists
+  --mat-list-item-label-text-font: #{$font-family};
+}
+
+// Component class overrides
+.mat-mdc-form-field,
+.mat-mdc-button,
+.mat-mdc-card,
+.mat-mdc-dialog-container,
+.mat-mdc-select,
+.mat-mdc-tab,
+.mat-mdc-table,
+.mat-mdc-menu,
+.mat-mdc-list,
+.mat-mdc-chip,
+.mat-mdc-tooltip,
+.mat-toolbar,
+.mat-stepper {
+  font-family: $font-family !important;
 }

@@ -42,3 +42,6 @@ Thumbs.db
 
 # Compodoc documentation
 /documentation
+# Moat task system
+.moat/
+.claude/commands/drawbridge-workflow.md

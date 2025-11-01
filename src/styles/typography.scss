@@ -1,0 +1,108 @@
+// Typography utility classes using M3 system tokens
+
+// Headline typography classes
+.text-headline-large {
+  font-family: var(--mat-headline-large-font);
+  font-size: var(--mat-headline-large-size);
+  font-weight: var(--mat-headline-large-weight);
+  line-height: var(--mat-headline-large-line-height);
+}
+
+.text-headline-medium {
+  font-family: var(--mat-headline-medium-font);
+  font-size: var(--mat-headline-medium-size);
+  font-weight: var(--mat-headline-medium-weight);
+  line-height: var(--mat-headline-medium-line-height);
+}
+
+.text-headline-small {
+  font-family: var(--mat-headline-small-font);
+  font-size: var(--mat-headline-small-size);
+  font-weight: var(--mat-headline-small-weight);
+  line-height: var(--mat-headline-small-line-height);
+}
+
+// Title typography classes
+.text-title-large {
+  font-family: var(--mat-title-large-font);
+  font-size: var(--mat-title-large-size);
+  font-weight: var(--mat-title-large-weight);
+  line-height: var(--mat-title-large-line-height);
+}
+
+.text-title-medium {
+  font-family: var(--mat-title-medium-font);
+  font-size: var(--mat-title-medium-size);
+  font-weight: var(--mat-title-medium-weight);
+  line-height: var(--mat-title-medium-line-height);
+}
+
+.text-title-small {
+  font-family: var(--mat-title-small-font);
+  font-size: var(--mat-title-small-size);
+  font-weight: var(--mat-title-small-weight);
+  line-height: var(--mat-title-small-line-height);
+}
+
+// Body typography classes
+.text-body-large {
+  font-family: var(--mat-body-large-font);
+  font-size: var(--mat-body-large-size);
+  font-weight: var(--mat-body-large-weight);
+  line-height: var(--mat-body-large-line-height);
+}
+
+.text-body-medium {
+  font-family: var(--mat-body-medium-font);
+  font-size: var(--mat-body-medium-size);
+  font-weight: var(--mat-body-medium-weight);
+  line-height: var(--mat-body-medium-line-height);
+}
+
+.text-body-small {
+  font-family: var(--mat-body-small-font);
+  font-size: var(--mat-body-small-size);
+  font-weight: var(--mat-body-small-weight);
+  line-height: var(--mat-body-small-line-height);
+}
+
+// Label typography classes
+.text-label-large {
+  font-family: var(--mat-label-large-font);
+  font-size: var(--mat-label-large-size);
+  font-weight: var(--mat-label-large-weight);
+  line-height: var(--mat-label-large-line-height);
+}
+
+.text-label-medium {
+  font-family: var(--mat-label-medium-font);
+  font-size: var(--mat-label-medium-size);
+  font-weight: var(--mat-label-medium-weight);
+  line-height: var(--mat-label-medium-line-height);
+}
+
+.text-label-small {
+  font-family: var(--mat-label-small-font);
+  font-size: var(--mat-label-small-size);
+  font-weight: var(--mat-label-small-weight);
+  line-height: var(--mat-label-small-line-height);
+}
+
+// Responsive typography utilities
+@media (max-width: 768px) {
+  .text-headline-large { font-size: 28px; line-height: 36px; }
+  .text-headline-medium { font-size: 24px; line-height: 32px; }
+  .text-headline-small { font-size: 20px; line-height: 28px; }
+  .text-title-large { font-size: 18px; line-height: 24px; }
+  .text-title-medium { font-size: 16px; line-height: 22px; }
+  .text-title-small { font-size: 14px; line-height: 20px; }
+}
+
+// Dark theme text colors
+.dark {
+  --mat-sys-on-surface: #e6e0e9;
+  --mat-sys-on-surface-variant: #cac4d0;
+  --mat-sys-primary: #8ecdf8;
+  --mat-sys-secondary: #cec2e0;
+  --mat-sys-tertiary: #f0b8c8;
+}

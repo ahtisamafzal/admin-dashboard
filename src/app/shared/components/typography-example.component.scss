@@ -1,0 +1,37 @@
+.typography-showcase {
+  padding: 24px;
+  background: var(--mat-sys-surface-container);
+  border-radius: 8px;
+  color: var(--mat-sys-on-surface);
+}
+
+.custom-typography {
+  font-family: var(--mat-title-medium-font);
+  font-size: var(--mat-title-medium-size);
+  font-weight: var(--mat-title-medium-weight);
+  line-height: var(--mat-title-medium-line-height);
+  color: var(--mat-sys-primary);
+  margin-top: 16px;
+  padding: 12px;
+  border-left: 4px solid var(--mat-sys-primary);
+}
+
+// Responsive typography
+@media (max-width: 768px) {
+  .typography-showcase {
+    padding: 16px;
+  }
+  
+  h1.text-headline-large { 
+    font-size: 28px; 
+    line-height: 35px; 
+  }
+  h2.text-headline-medium { 
+    font-size: 24px; 
+    line-height: 30px; 
+  }
+  h3.text-headline-small { 
+    font-size: 20px; 
+    line-height: 26px; 
+  }
+}

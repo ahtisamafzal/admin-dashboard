@@ -113,17 +113,29 @@
   color: var(--mat-sys-on-surface);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
 }
 
 .sort-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: flex-start;
+  width: auto;
   text-transform: none;
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   transition: all 0.2s ease;
+  flex-wrap: nowrap;
+}
+
+.sort-button .mdc-button__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .sort-button:hover {
@@ -132,9 +144,24 @@
 }
 
 .sort-indicators {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.25rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.float-highlight {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Remove the overly specific and conflicting rules */
+.sort-button mat-icon {
+  vertical-align: middle;
 }
 
 .sort-priority {
