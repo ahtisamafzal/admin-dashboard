@@ -40,6 +40,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# AI files
+.moat/*
+.claude/*
+
 # Compodoc documentation
 /documentation
 # Moat task system
